@@ -1,0 +1,13 @@
+@import "./_variables.scss";
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 40%;
+  width: 15%;
+  background: $foreground-color-light;
+  margin: 2%;
+  border: solid 2px $border-color-light;
+  border-radius: 5%;
+}

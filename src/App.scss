@@ -1,0 +1,7 @@
+@import "./styles/_variables.scss";
+.App{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background: $background-color-light;
+}
