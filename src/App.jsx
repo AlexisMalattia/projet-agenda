@@ -28,7 +28,11 @@ function App() {
     <Carte data={data}/>)
   return (
     <div className="App">
-        {mapDatas}
+        <button>Ajouter devoir</button>
+        <div className="cartes">
+            {mapDatas}
+        </div>
+
     </div>
   )
 }
