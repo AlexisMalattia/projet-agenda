@@ -6,7 +6,7 @@ import { useForm} from "@mantine/form";
 function PageCreation(){
     const navigate = useNavigate();
     function retourAccueil(){
-        navigate('/');
+        navigate('/',{state: {data: form.values}});
     }
     const form = useForm({
         initialValues: {
@@ -24,12 +24,12 @@ function PageCreation(){
             <div className='EcranCreation'>
                 <form onSubmit={form.onSubmit((values) => console.log(values))}>
                     <div className="formHeader">
-                        <TextInput withAsterisk label="Nom du devoir" name="nomDuDevoir" required className="inputForm"/>
-                        <TextInput withAsterisk label="Date de rendu" name="dateDeRendu" required className="inputForm"/>
+                        <TextInput withAsterisk label="Nom du devoir" name="nomDuDevoir" required className="inputForm " {...form.getInputProps('nomDuDevoir')}/>
+                        <TextInput withAsterisk label="Date de rendu" name="dateDeRendu" required className="inputForm" {...form.getInputProps('dateDeRendu')}/>
                     </div>
-                    <Textarea rows={5} label={'Description'} name="description" required className="descriptionInputForm" styles={{ field: { height: '20em' } }}/>
-                    <TextInput withAsterisk label="Module" name="module" required />
-
+                    <Textarea minRows={5} autosize label={'Description'} name="description" required className="descriptionInputForm" {...form.getInputProps('description')}/>
+                    <TextInput withAsterisk label="Module" name="module" required  {...form.getInputProps('module')}/>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         </div>
